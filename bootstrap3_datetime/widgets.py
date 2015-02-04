@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
-from django.forms.utils import flatatt
+from django import VERSION as DJANGO_VERSION
+if DJANGO_VERSION >= (1, 7):
+    from django.forms.utils import flatatt
+else:
+    from django.forms.util import flatatt
 from django.forms.widgets import DateTimeInput
 from django.utils import translation
 from django.utils.safestring import mark_safe
